@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+
+# raw dataset (46 MB), the notebook downloads it automatically
+summative/linear_regression/ghsc_psm_deliveries.csv
