@@ -30,3 +30,17 @@ uv run jupyter notebook linear_regression/multivariate.ipynb
 ```
 
 The notebook downloads the dataset the first time it runs and saves the best model to `summative/API/best_model.pkl`.
+
+## Running the API locally
+
+```bash
+cd summative
+uv sync
+uv run uvicorn prediction:app --app-dir API --reload
+```
+
+Then open http://127.0.0.1:8000/docs.
+
+- `POST /predict` takes the 12 inputs and returns the predicted number of days.
+- `POST /retrain` takes a CSV with the same columns as `API/training_data.csv` and retrains the model. `API/sample_new_orders.csv` has 30 real orders from August and September 2023 that the model has not seen, so you can use it to test.
+- `GET /` lists the allowed values for the text inputs (countries, product categories and so on).
