@@ -11,7 +11,9 @@
 
 ## API (Swagger UI)
 
-TODO: https://your-service.onrender.com/docs
+https://order-cycle-api.onrender.com/docs
+
+It runs on Render's free plan, so the first request after a while can take about a minute while the server wakes up.
 
 ## Video demo
 
