@@ -21,7 +21,16 @@ TODO: YouTube link
 
 ## How to run the mobile app
 
-TODO
+The app is in `summative/FlutterApp`. It calls the API on Render, so it needs internet. You need Flutter installed and an Android emulator or iOS simulator running.
+
+```bash
+cd summative/FlutterApp
+flutter pub get
+flutter devices
+flutter run -d <device id from flutter devices>
+```
+
+The fields start with an example order from Rwanda. Press **Predict** to get the predicted number of days. If a field is empty, has the wrong type (letters in a number field) or is out of range (for example month 13), the error is shown in the same box. The first prediction can take up to a minute if the Render server was asleep.
 
 ## Running the notebook
 
