@@ -25,8 +25,7 @@ class OrderCycleApp extends StatelessWidget {
   }
 }
 
-// One input of the model: the name the API expects, the label shown in the app,
-// a starting value and a short help text.
+// one input: API name, label, starting value, help text
 class InputField {
   final String key;
   final String label;
@@ -83,9 +82,7 @@ class _PredictionPageState extends State<PredictionPage> {
     super.dispose();
   }
 
-  // Builds the JSON body. An empty field is left out, so the API says it is required.
-  // A number field is sent as a number if it is one, otherwise as text, so the API
-  // rejects it with a "wrong type" error.
+  // empty fields are left out, wrong numbers are sent as text so the API rejects them
   Map<String, dynamic> buildBody() {
     final body = <String, dynamic>{};
     for (final field in inputs) {
@@ -96,8 +93,7 @@ class _PredictionPageState extends State<PredictionPage> {
     return body;
   }
 
-  // Turns the list of errors from the API into lines like
-  // "Order month: Input should be less than or equal to 12"
+  // turn the API errors into readable lines
   String readErrors(List<dynamic> errors) {
     final labels = {for (final field in inputs) field.key: field.label};
     final lines = <String>[];
@@ -183,7 +179,7 @@ class _PredictionPageState extends State<PredictionPage> {
         border: Border.all(color: color),
         borderRadius: BorderRadius.circular(8),
       ),
-      // if there are many errors the box scrolls instead of covering the form
+      // scroll if there are many errors
       constraints: const BoxConstraints(maxHeight: 190),
       child: SingleChildScrollView(
         child: Row(
@@ -216,7 +212,7 @@ class _PredictionPageState extends State<PredictionPage> {
       body: SafeArea(
         child: Column(
           children: [
-            // the form scrolls, the button and the result stay at the bottom
+            // form scrolls, button and result stay at the bottom
             Expanded(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.all(16),
