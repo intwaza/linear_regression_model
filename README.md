@@ -17,7 +17,7 @@ It runs on Render's free plan, so the first request after a while can take about
 
 ## Video demo
 
-TODO: YouTube link
+https://youtu.be/n-UJf0akuIg
 
 ## How to run the mobile app
 
